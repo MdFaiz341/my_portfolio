@@ -26,20 +26,12 @@ export default function About() {
                 "linear-gradient(160deg, rgba(139,92,246,0.35), rgba(63,224,197,0.15) 60%, #171325 100%)",
             }}
           >
-            {/* <span
-              aria-hidden="true"
-              className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 translate-y-[-58%] font-display text-[9rem] font-bold leading-none text-white/6"
-            >
-              MF
-            </span> */}
             <Image
                 src={photo}
                 alt="Md Faiz"
                 className="rounded-[20px]"
             />
-            {/* <span className="relative z-10 font-mono text-[0.78rem] text-white/75">
-              PHOTO / AVATAR — swap this block for your image
-            </span> */}
+
           </motion.div>
 
           <motion.div
@@ -53,27 +45,28 @@ export default function About() {
               About me
             </div>
             <h2 className="mt-3.5 font-display text-3xl font-semibold sm:text-4xl">
-              A little about how I work
+              A little about me
             </h2>
 
             <p className="mt-6 text-[1.03rem] text-textSoft">
-              I&apos;m a backend-focused software engineer who enjoys the
-              problems most people never see — keeping a connection alive,
-              keeping data consistent, keeping a system predictable when a
-              hundred things are happening at once. I work mainly in Node.js
-              and TypeScript, with Next.js on the front end when a project
-              needs it.
+                Hello! I’m Md. Faiz, a Computer Science undergraduate and Full-Stack
+                Developer passionate about building reliable, real-time web applications. My journey in 
+                development has grown from learning the fundamentals of programming and DSA to 
+                building complete applications across the frontend, backend, and database layers.
             </p>
 
-            <p className="my-7 border-l-2 border-cyan pl-5 font-display text-xl font-medium">
-              &ldquo;The best backend work is invisible — it just never
-              breaks.&rdquo;
+            <p className="text-[1.03rem] text-textSoft my-4">
+                I specialize in building full-stack applications using React, Next.js, TypeScript, 
+                Node.js, and Express.js, with hands-on experience working with PostgreSQL, MongoDB, 
+                REST APIs, and WebSockets. I enjoy solving backend and system-level problems such as 
+                real-time communication, authentication, authorization, data consistency, and application state management.
             </p>
 
             <p className="text-[1.03rem] text-textSoft">
-              Most recently I&apos;ve been deep in real-time architecture:
-              WebSocket connection management, authorization models, and
-              designing systems that stay clean as they grow.
+                I also actively practice Data Structures & Algorithms and have solved 150+ problems 
+                across LeetCode and GeeksforGeeks, strengthening my problem-solving and algorithmic 
+                thinking. I’m currently looking for opportunities where I can contribute as an SDE 
+                or Full-Stack Developer while continuing to grow as a software engineer.
             </p>
 
             <div className="mt-9 grid grid-cols-2 gap-5 border-t border-border pt-7 sm:grid-cols-3">

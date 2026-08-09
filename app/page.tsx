@@ -7,6 +7,7 @@ import About from "@/components/About";
 import Interests from "@/components/Interests";
 import FeaturedProject from "@/components/FeaturedProject";
 import Contact from "@/components/Contact";
+import { Toolkit } from "@/components/Toolkit";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Stats />
       <About />
       {/* <Marquee /> */}
+      <Toolkit/>
       <Interests />
       <FeaturedProject />
       <Contact />
