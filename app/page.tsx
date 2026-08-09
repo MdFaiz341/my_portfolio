@@ -1,15 +1,25 @@
-
-
-import { Hero } from "@/components/Hero";
-import { Navbar } from "@/components/Navbar";
+// import MeshBackground from "@/components/MeshBackground";
+import Nav from "@/components/Navbar";
+import {Hero} from "@/components/Hero";
+import Stats from "@/components/Stats";
+import About from "@/components/About";
+// import Marquee from "@/components/Marquee";
+import Interests from "@/components/Interests";
+import FeaturedProject from "@/components/FeaturedProject";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-    <main>
-      <Navbar />
-      <Hero/>
-
-      <div className="min-h-screen" />
+    <main className="relative">
+      {/* <MeshBackground /> */}
+      <Nav />
+      <Hero />
+      <Stats />
+      <About />
+      {/* <Marquee /> */}
+      <Interests />
+      <FeaturedProject />
+      <Contact />
     </main>
   );
 }

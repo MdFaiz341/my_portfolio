@@ -1,86 +1,73 @@
+"use client";
 
-// import { ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
-// import { profile } from "./data";
-// import { Reveal } from "./Reveal";
-// import { ContactForm } from "./ContactForm";
+import { motion } from "framer-motion";
 
-// export function Contact() {
-//   return (
-//     <section id="contact" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-24">
-//       <Reveal>
-//         <div className="relative overflow-hidden rounded-[2rem] surface-card px-8 py-16 text-center sm:px-16">
-//           <div
-//             aria-hidden
-//             className="pointer-events-none absolute inset-x-0 -top-40 h-80 opacity-60 blur-3xl"
-//             style={{ backgroundImage: "var(--gradient-primary)" }}
-//           />
-//           <div className="relative">
-//             <span className="text-xs tracking-[0.3em] text-accent uppercase">Contact</span>
-//             <h2 className="mt-4 text-4xl font-bold sm:text-6xl">
-//               Let&apos;s build something <span className="text-gradient">real-time</span>
-//             </h2>
-//             <p className="mx-auto mt-5 max-w-xl text-muted-foreground">
-//               Available for full-stack engineering roles and freelance collaborations.
-//             </p>
-//             <a
-//               href={`mailto:${profile.email}`}
-//               className="group mt-9 inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform duration-300 hover:scale-[1.03]"
-//               style={{ backgroundImage: "var(--gradient-primary)" }}
-//             >
-//               {profile.email}
-//               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-//             </a>
-//           </div>
-//         </div>
-//       </Reveal>
+const socials = ["GitHub", "LinkedIn"];
 
-//       <Reveal>
-//         <div className="mt-8 grid gap-6 md:grid-cols-2">
-//           <div className="rounded-[2rem] surface-card p-8">
-//             <h3 className="font-display text-2xl font-bold">Get in touch</h3>
-//             <p className="mt-3 text-sm text-muted-foreground">
-//               Drop your details and a short note — it opens a pre-filled email straight to my inbox.
-//             </p>
+export default function Contact() {
+  return (
+    <section id="contact" className="relative z-10 py-24 text-center sm:py-28">
+      <div className="mx-auto max-w-5xl px-6 sm:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.65, ease: "easeOut" }}
+          className="rounded-[28px] border border-borderStrong px-8 py-16 sm:px-10 sm:py-20"
+          style={{
+            background:
+              "linear-gradient(160deg, rgba(139,92,246,0.14), rgba(63,224,197,0.06) 60%, #171325)",
+          }}
+        >
+          <div className="inline-flex items-center gap-2.5 font-mono text-[0.74rem] uppercase tracking-[0.14em] text-gold">
+            <span className="h-1.5 w-1.5 rounded-full bg-violetSoft" />
+            Get in touch
+          </div>
 
-//             <ul className="mt-8 space-y-4 text-sm">
-//               <li className="flex items-center gap-3">
-//                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-muted text-accent">
-//                   <Mail className="h-4 w-4" />
-//                 </span>
-//                 <a href={`mailto:${profile.email}`} className="hover:text-accent">
-//                   {profile.email}
-//                 </a>
-//               </li>
-//               <li className="flex items-center gap-3">
-//                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-muted text-accent">
-//                   <Github className="h-4 w-4" />
-//                 </span>
-//                 <a href={profile.github} target="_blank" rel="noreferrer" className="hover:text-accent">
-//                   GitHub
-//                 </a>
-//               </li>
-//               <li className="flex items-center gap-3">
-//                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-muted text-accent">
-//                   <Linkedin className="h-4 w-4" />
-//                 </span>
-//                 <a href={profile.linkedin} target="_blank" rel="noreferrer" className="hover:text-accent">
-//                   LinkedIn
-//                 </a>
-//               </li>
-//             </ul>
-//           </div>
+          <h2 className="mx-auto mt-4 max-w-[18ch] font-display text-4xl font-semibold sm:text-5xl">
+            Let&apos;s build something worth remembering.
+          </h2>
 
-//           <div className="rounded-[2rem] surface-card p-8">
-//             <ContactForm />
-//           </div>
-//         </div>
-//       </Reveal>
+          <p className="mx-auto mt-5 max-w-[48ch] text-lg text-textSoft">
+            I&apos;m currently taking on a small number of new projects. The
+            fastest way to reach me is by email — I read everything, and
+            reply to everything worth replying to.
+          </p>
 
+          <div className="mt-11 flex justify-center">
+            <a
+              href="mailto:faiz@example.com"
+              className="inline-flex items-center gap-2 rounded-full bg-linear-to-r from-violet to-cyan px-7 py-3.75 font-mono text-[0.82rem] font-medium text-bg0 transition-shadow duration-300 hover:shadow-[0_12px_40px_-8px_rgba(139,92,246,0.55)]"
+            >
+              faiz@example.com
+            </a>
+          </div>
 
-//       <footer className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-border pt-8 text-sm text-muted-foreground sm:flex-row">
-//         <p>© {new Date().getFullYear()} {profile.name}</p>
-//         <p className="font-display tracking-widest uppercase">Built with care</p>
-//       </footer>
-//     </section>
-//   );
-// }
+          <div className="mt-13 flex flex-wrap justify-center gap-4">
+              <a
+                href="https://www.linkedin.com/in/md-faiz-0556a8278"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-borderStrong px-5 py-2.75 font-mono text-[0.8rem] text-textSoft transition-colors hover:border-violetSoft hover:bg-violet/8 hover:text-text"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://github.com/MdFaiz341"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-borderStrong px-5 py-2.75 font-mono text-[0.8rem] text-textSoft transition-colors hover:border-violetSoft hover:bg-violet/8 hover:text-text"
+              >
+                GitHub
+              </a>
+          </div>
+        </motion.div>
+
+        <footer className="mt-14 flex flex-wrap justify-between gap-2.5 border-t border-border pt-6 font-mono text-[0.74rem] text-textSoft">
+          <span>© 2026 Md Faiz. All rights reserved.</span>
+          <span>Designed &amp; built by hand.</span>
+        </footer>
+      </div>
+    </section>
+  );
+}

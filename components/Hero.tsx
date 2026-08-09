@@ -1,178 +1,150 @@
-import { motion, useReducedMotion } from "framer-motion";
-import { ArrowUpRight, Mail, Sparkles, Zap } from "lucide-react";
-import { profile, stats, marqueeStack } from "./data";
-import heroOrb from "@/assets/hero-orb.jpg";
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
+"use client";
 
-
+import { motion } from "framer-motion";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 
 export function Hero() {
-  const reduce = useReducedMotion();
-  const words = profile.name.split(" ");
-
   return (
-    <header className="aurora relative overflow-hidden">
-      <div aria-hidden className="pointer-events-none absolute inset-0 grid-lines" />
-      <div className="relative mx-auto max-w-6xl px-6 pt-28 pb-20 sm:pt-36">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
-          <div>
-            <motion.p
-              initial={reduce ? false : { opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium tracking-wide text-muted-foreground uppercase"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-70" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
-              </span>
-              Open to new opportunities
-            </motion.p>
+    <section
+      id="home"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#07070d] px-6 pt-20 mb-30"
+    >
+      {/* Background glow */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute left-1/2 top-[38%] h-125 w-125 -translate-x-1/2 rounded-full bg-violet-600/15 blur-[150px]" />
 
-            <motion.p
-              initial={reduce ? false : { opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.08 }}
-              className="mt-8 flex items-center gap-3 text-xs font-semibold tracking-[0.42em] text-muted-foreground uppercase"
-            >
-              Hello, I&apos;m a developer
-              <Sparkles className="h-4 w-4 text-accent" />
-            </motion.p>
+        <div className="absolute -left-40 -bottom-37.5 h-112.5 w-112.5 rounded-full bg-fuchsia-600/10 blur-[130px]" />
 
-            <h1 className="mt-4 font-display text-[clamp(3rem,9vw,6rem)] leading-[0.86] font-extrabold">
-              {words.map((w, i) => (
-                <motion.span
-                  key={w}
-                  className="mr-4 inline-block"
-                  initial={reduce ? false : { opacity: 0, y: 40, rotate: -3 }}
-                  animate={{ opacity: 1, y: 0, rotate: 0 }}
-                  transition={{ duration: 0.8, delay: 0.1 * i, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  {i === 0 ? (
-                    <span className="text-gradient drop-shadow-[0_10px_40px_color-mix(in_oklab,var(--primary)_55%,transparent)]">
-                      {w}
-                    </span>
-                  ) : (
-                    <span className="relative">
-                      <span className="relative z-10">{w}</span>
-                      <span
-                        aria-hidden
-                        className="absolute inset-x-0 bottom-1.5 -z-0 h-3 rounded-full opacity-70 blur-[2px]"
-                        style={{ backgroundImage: "var(--gradient-primary)" }}
-                      />
-                    </span>
-                  )}
-                </motion.span>
-              ))}
-            </h1>
+        <div className="absolute -right-40 -top-37.5 h-112.5 w-112.5 rounded-full bg-purple-500/10 blur-[130px]" />
+      </div>
 
-            <motion.div
-              initial={reduce ? false : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.35 }}
-              className="mt-8 flex max-w-2xl flex-col gap-6"
-            >
-              <p className="font-display text-lg text-foreground/90 sm:text-xl">{profile.role}</p>
-              <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
-                {profile.tagline}
-              </p>
+      {/* Subtle grid */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.025]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px)",
+          backgroundSize: "80px 80px",
+        }}
+      />
 
-              <div className="flex flex-wrap items-center gap-3">
-                <a
-                  href="#work"
-                  className="group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform duration-300 hover:scale-[1.03]"
-                  style={{ backgroundImage: "var(--gradient-primary)" }}
-                >
-                  View selected work
-                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
-                <div className="flex items-center gap-2">
-                  {[
-                    { href: `mailto:${profile.email}`, icon: Mail, label: "Email" },
-                    { href: profile.github, icon: FaGithub, label: "GitHub" },
-                    { href: profile.linkedin, icon: FaLinkedin, label: "LinkedIn" },
-                  ].map(({ href, icon: Icon, label }) => (
-                    <a
-                      key={label}
-                      href={href}
-                      aria-label={label}
-                      className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card/60 text-muted-foreground transition-colors hover:border-accent/60 hover:text-foreground"
-                    >
-                      <Icon className="h-4 w-4" />
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </div>
+      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center text-center">
+        {/* Greeting */}
+        <motion.div
+          initial={{ opacity: 0, y: -15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-7 text-5xl sm:text-6xl"
+        >
+          👋
+        </motion.div>
 
-          <motion.div
-            initial={reduce ? false : { opacity: 0, scale: 0.94, y: 24 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="relative mx-auto w-full max-w-md"
+        {/* Heading */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.1,
+            ease: "easeOut",
+          }}
+          className="font-bold leading-[0.95] tracking-[-0.07em]"
+        >
+          <span className="block text-6xl text-white sm:text-7xl md:text-8xl lg:text-[100px]">
+            Hi, I&apos;m
+          </span>
+
+          <span className="mt-2 block bg-linear-to-r from-violet-400 via-purple-400 to-fuchsia-400 bg-clip-text text-6xl text-transparent sm:text-7xl md:text-8xl lg:text-[100px]">
+            MD Faiz
+          </span>
+        </motion.h1>
+
+        {/* Description */}
+        <motion.p
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.7,
+            delay: 0.25,
+          }}
+          className="mt-8 max-w-3xl text-lg leading-relaxed text-zinc-400 sm:text-xl md:text-2xl"
+        >
+          A passionate{" "}
+          <span className="font-semibold text-violet-400">
+            Software Engineer
+          </span>{" "}
+          who loves crafting beautiful,
+          <br className="hidden sm:block" />
+          functional digital experiences.
+        </motion.p>
+
+        {/* Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.7,
+            delay: 0.4,
+          }}
+          className="mt-10 flex flex-col gap-4 sm:flex-row"
+        >
+          <a
+            href="#projects"
+            className="group flex min-w-47.5 items-center justify-center gap-2 rounded-full bg-linear-to-r from-violet-600 to-purple-600 px-7 py-4 text-sm font-semibold text-white shadow-[0_10px_40px_rgba(124,58,237,0.25)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_15px_50px_rgba(124,58,237,0.4)]"
           >
-            <div className="relative aspect-square overflow-hidden rounded-[2.5rem] surface-card p-3">
-              <img
-                src={heroOrb}
-                alt="Abstract indigo sphere representing Md. Faiz's engineering work"
-                width={1024}
-                height={1024}
-                className="h-full w-full rounded-[2rem] object-cover animate-float"
-              />
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 rounded-[2.5rem] opacity-60"
-                style={{
-                  background:
-                    "radial-gradient(60% 60% at 50% 40%, color-mix(in oklab, var(--primary-glow) 18%, transparent), transparent 70%)",
-                }}
-              />
-              <span className="absolute inset-0 flex items-center justify-center font-display text-6xl font-extrabold tracking-tight text-primary-foreground drop-shadow-[0_10px_30px_rgba(0,0,0,0.55)] sm:text-7xl">
-                MF
-              </span>
-            </div>
+            View My Work
 
-            <div className="absolute -top-4 -right-2 flex items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-2 text-xs font-medium backdrop-blur-xl">
-              <Sparkles className="h-3.5 w-3.5 text-accent" />
-              Creative
-            </div>
-            <div className="absolute -bottom-4 -left-2 flex items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-2 text-xs font-medium backdrop-blur-xl">
-              <Zap className="h-3.5 w-3.5 text-accent" />
-              Always learning
-            </div>
-          </motion.div>
-        </div>
+            <ArrowUpRight
+              size={17}
+              className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+            />
+          </a>
 
-        <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {stats.map((s, i) => (
-            <motion.div
-              key={s.label}
-              initial={reduce ? false : { opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 + i * 0.1 }}
-              className="rounded-2xl surface-card px-5 py-4"
-            >
-              <p className="text-xs tracking-widest text-muted-foreground uppercase">{s.label}</p>
-              <p className="font-display mt-1 text-lg font-bold">{s.value}</p>
-            </motion.div>
-          ))}
-        </div>
+          <a
+            href="#contact"
+            className="flex min-w-47.5 items-center justify-center rounded-full border border-violet-500/60 bg-white/2 px-7 py-4 text-sm font-semibold text-violet-300 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-violet-400 hover:bg-violet-500/10 hover:text-white"
+          >
+            Get In Touch
+          </a>
+        </motion.div>
+
+        {/* Small status */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 0.7,
+            delay: 0.7,
+          }}
+          className="mt-12 flex items-center gap-2 text-xs text-zinc-600"
+        >
+          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,.8)]" />
+          Available for opportunities
+        </motion.div>
       </div>
 
-      <div className="relative border-y border-border/70 py-4">
-        <div className="flex w-max animate-marquee gap-10 pr-10">
-          {[...marqueeStack, ...marqueeStack].map((item, i) => (
-            <span
-              key={`${item}-${i}`}
-              className="font-display text-sm tracking-[0.25em] text-muted-foreground/70 uppercase"
-            >
-              {item}
-            </span>
-          ))}
-        </div>
-      </div>
-    </header>
+      {/* Scroll indicator */}
+      <motion.a
+        href="#about"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1 }}
+        className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-zinc-600 transition hover:text-violet-400 sm:flex"
+      >
+        <span className="text-[9px] font-medium tracking-[0.25em]">
+          SCROLL
+        </span>
+
+        <motion.span
+          animate={{ y: [0, 5, 0] }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+          }}
+        >
+          <ArrowDown size={14} />
+        </motion.span>
+      </motion.a>
+    </section>
   );
 }
