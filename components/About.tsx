@@ -3,12 +3,9 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import photo from "../assets/Formal-Pic-Coat.png";
+import { facts } from "@/lib/data";
 
-const facts = [
-  { label: "Role", value: "Backend-Focused Software Engineer" },
-  { label: "Focus", value: "Real-time systems & APIs" },
-  { label: "Available", value: "Open to select projects" },
-];
+
 
 export default function About() {
   return (

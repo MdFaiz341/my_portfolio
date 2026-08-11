@@ -2,13 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { links } from "@/lib/data";
+import { Download } from "lucide-react";
 
-const links = [
-  { href: "#about", label: "About" },
-  { href: "#interests", label: "Interests" },
-  { href: "#work", label: "Work" },
-  { href: "#contact", label: "Contact" },
-];
+
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -48,10 +45,15 @@ export default function Navbar() {
           ))}
         </nav>
         <a
-          href="#contact"
-          className="rounded-full border border-borderStrong px-4.5 py-2.25 font-mono text-[0.78rem] transition-colors hover:border-violetSoft hover:bg-violet/10"
+          href="/Faiz-Resume.pdf"
+          download="Md_Faiz_Resume.pdf"
+          className="group rounded-full flex items-center gap-2 font-semibold border hover:scale-105 duration-300 ease-linear px-4.5 py-2.25 text-[0.78rem] transition-colors border-violetSoft hover:bg-violet/30"
         >
-          Let&apos;s talk →
+          Resume
+          <Download
+                      size={14}
+                      className="transition-transform duration-300"
+                    />
         </a>
       </div>
     </motion.header>

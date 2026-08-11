@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -37,6 +38,7 @@ export default function RootLayout({
       className={`dark ${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <body className="bg-bg0 text-text font-sans antialiased">
+        <ScrollToTop/>
         {children}
       </body>
     </html>

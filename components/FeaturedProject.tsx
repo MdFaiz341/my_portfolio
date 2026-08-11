@@ -2,38 +2,10 @@
 
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
+import { modules, tech } from "@/lib/data";
+import { ArrowUpIcon, ArrowUpRight } from "lucide-react";
 
-const tech = ["Next.js", "Node.js", "TypeScript", "WebSockets", "PostgreSQL", "MongoDB", "Prisma"];
 
-const modules = [
-  {
-    icon: "💬",
-    title: "Real-Time Chat System",
-    points: [
-      "One-to-one and group messaging with persistent history",
-      "Unread message tracking and typing indicators",
-      "Online presence via the centralized WebSocket manager",
-    ],
-  },
-  {
-    icon: "🎨",
-    title: "Collaborative Canvas",
-    points: [
-      "Modular HTML5 Canvas engine: selection, shapes, arrows, freehand drawing, text, and movement",
-      "Persistent canvas state across sessions",
-      "Server-side authorization with per-user shape ownership via REST API",
-    ],
-  },
-  {
-    icon: "🧠",
-    title: "Second Brain",
-    points: [
-      "Save and organize YouTube, X/Twitter, GitHub, and web links",
-      "Automatic URL detection and content classification",
-      "Optimistic UI for create, delete, filter, and search",
-    ],
-  },
-];
 
 export default function FeaturedProject() {
   return (
@@ -124,16 +96,16 @@ export default function FeaturedProject() {
 
             <div className="mt-8 flex flex-wrap gap-4">
               <a
-                href="#"
-                className="inline-flex items-center gap-1.5 font-mono text-[0.82rem] text-cyan"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/MdFaiz341/Devflows"
+                className="group inline-flex items-center px-3 py-2 rounded-lg gap-1.5 font-mono text-[0.82rem] hover:bg-violet-900 text-cyan hover:scale-105 bg-gray-700 transition duration-300 ease-linear"
               >
-                View on GitHub <span>↗</span>
-              </a>
-              <a
-                href="#"
-                className="inline-flex items-center gap-1.5 font-mono text-[0.82rem] text-cyan"
-              >
-                Live demo <span>↗</span>
+                View on GitHub
+                  <ArrowUpRight
+                      size={16}
+                      className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    />
               </a>
             </div>
           </div>

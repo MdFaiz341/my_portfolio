@@ -89,7 +89,7 @@ export function Hero() {
           className="mt-10 flex flex-col gap-4 sm:flex-row"
         >
           <a
-            href="#projects"
+            href="#work"
             className="group flex min-w-47.5 items-center justify-center gap-2 rounded-full bg-linear-to-r from-violet-600 to-purple-600 px-7 py-4 text-sm font-semibold text-white shadow-[0_10px_40px_rgba(124,58,237,0.25)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_15px_50px_rgba(124,58,237,0.4)]"
           >
             View My Work

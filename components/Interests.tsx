@@ -2,43 +2,9 @@
 
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
+import { hobbies } from "@/lib/data";
 
-const hobbies = [
-  {
-    glyph: "📷",
-    title: "Film photography",
-    blurb:
-      "Shooting street scenes on an old 35mm camera — mostly for the excuse to walk without a destination.",
-  },
-  {
-    glyph: "🥾",
-    title: "Hiking & trails",
-    blurb:
-      "Weekend trips to nearby hill trails. Nothing clears a stuck problem like a few hours outdoors.",
-  },
-  {
-    glyph: "🎮",
-    title: "Gaming",
-    blurb:
-      "Love exploring virtual worlds and competitive gaming.",
-  },
-  {
-    glyph: "📚",
-    title: "Reading sci-fi",
-    blurb:
-      "Currently working through classic speculative fiction — always looking for recommendations.",
-  },
-  {
-    glyph: "🎵",
-    title: "Music",
-    blurb: "Listening to various genres and discovering new artists.",
-  },
-  {
-    glyph: "🏃‍♂️",
-    title: "Fitness",
-    blurb: "Running, cycling, and maintaining a healthy lifestyle.",
-  },
-];
+
 
 export default function Interests() {
   return (

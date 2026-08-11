@@ -11,132 +11,123 @@ export const profile = {
 export const skills = {
   Languages: ["C++", "JavaScript", "TypeScript", "SQL"],
   Frontend: ["React.js", "Next.js", "Tailwind CSS"],
-  Backend: ["Node.js", "Express.js"],
-  Data: ["PostgreSQL", "MongoDB", "Prisma"],
-  "Real-Time": ["WebSockets"],
-  Tooling: ["Git", "GitHub"],
+  Backend: ["Node.js", "Express.js", "REST APIs"],
+  Database: ["MongoDB", "PostgreSQL", "Prisma"],
+  "Real-Time": ["WebSockets", "WS", "Real-Time Systems"],
+  Tools: ["Git", "GitHub"],
 };
 
-export const marqueeStack = [
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "WebSockets",
-  "PostgreSQL",
-  "Prisma",
-  "MongoDB",
-  "Express",
-  "Tailwind CSS",
-  "C++",
+export const links = [
+  { href: "#about", label: "About" },
+  { href: "#interests", label: "Interests" },
+  { href: "#work", label: "Work" },
+  { href: "#contact", label: "Contact" },
 ];
 
-export type Project = {
-  id: string;
-  title: string;
-  kicker: string;
-  summary: string;
-  stack: string[];
-  highlights?: string[];
-  span: string;
-
-  accent?: boolean;
-};
-
-export const projects: Project[] = [
-  {
-    id: "devflows",
-    title: "DevFlows",
-    kicker: "Full-stack collaborative workspace",
-    summary:
-      "A single workspace where teams chat, draw and think together in real time — built on Next.js, Node.js and a hardened WebSocket layer.",
-    stack: ["Next.js", "React", "TypeScript", "Node.js", "WebSockets"],
-    span: "md:col-span-4 md:row-span-2",
-    highlights: [
-      "Persistent, presence-aware chat",
-      "Singleton socket connection manager",
-      "Real-time multiplayer canvas",
-      "Server-enforced shape ownership",
-    ],
-    accent: true,
-
-  },
-  {
-    id: "chat",
-    title: "Real-time Chat",
-    kicker: "Messaging system",
-    summary:
-      "One-to-one and group conversations with persistent history, unread tracking, typing indicators, notifications and online presence.",
-    stack: ["WebSockets", "Node.js", "PostgreSQL"],
-    span: "md:col-span-2",
-  },
-  {
-    id: "socket",
-    title: "Socket Architecture",
-    kicker: "Singleton connection manager",
-    summary:
-      "A centralized WebSocket manager keeping one persistent connection app-wide — no duplicate sockets, no leaked event listeners.",
-    stack: ["TypeScript", "WebSockets"],
-    span: "md:col-span-2",
-  },
-  {
-    id: "canvas",
-    title: "Collaborative Canvas",
-    kicker: "HTML5 real-time drawing",
-    summary:
-      "Modular tool-based rendering for shapes, lines, arrows, freehand, text and selection with synchronized canvas state across clients.",
-    stack: ["Canvas API", "React", "WebSockets"],
-    span: "md:col-span-3",
-  },
-  {
-    id: "authz",
-    title: "Canvas Authorization",
-    kicker: "Server-side ownership",
-    summary:
-      "Shape-level ownership checks on the server so no user can move or delete geometry that isn't theirs.",
-    stack: ["Node.js", "Prisma"],
-    span: "md:col-span-3",
-  },
-  {
-    id: "second-brain",
-    title: "Second Brain",
-    kicker: "Knowledge management",
-    summary:
-      "Save and organize YouTube, X, GitHub and web resources with automatic URL detection, content classification, search, filtering and optimistic UI.",
-    stack: ["React", "Express.js", "MongoDB"],
-    span: "md:col-span-6",
-  },
-];
 
 export const stats = [
-  { label: "Core stacks", value: "MERN + Next" },
-  { label: "Focus", value: "Real-time systems" },
-  { label: "Shipped projects", value: "5+" },
+  {
+    type: "counter",
+    target: 3,
+    suffix: "",
+    label: "Apps in one workspace",
+    accent: "Developer Workspace",
+  },
+  {
+    type: "counter",
+    target: 150,
+    suffix: "+",
+    label: "DSA problem solving",
+    accent: "Problem Solving",
+  },
+  {
+    type: "text",
+    value: "MERN +",
+    value2: "Next.js",
+    label: "Core stacks",
+    accent: "Full Stack",
+  },
+  {
+    type: "text",
+    value: "Real-time",
+    value2: "Systems",
+    label: "Focus",
+    accent: "Engineering",
+  },
 ];
-
 
 export const hobbies = [
   {
-    title: "DSA",
-    description:
-      "Solving algorithmic problems and continuously improving my problem-solving skills.",
+    glyph: "📷",
+    title: "Film photography",
+    blurb:
+      "Shooting street scenes on an old 35mm camera — mostly for the excuse to walk without a destination.",
   },
-
   {
-    title: "UI / Design",
-    description:
-      "Exploring modern interfaces, animations and product experiences.",
+    glyph: "🥾",
+    title: "Hiking & trails",
+    blurb:
+      "Weekend trips to nearby hill trails. Nothing clears a stuck problem like a few hours outdoors.",
   },
-
   {
-    title: "Open Source",
-    description:
-      "Learning from interesting projects and experimenting with new technologies.",
+    glyph: "🎮",
+    title: "Gaming",
+    blurb:
+      "Love exploring virtual worlds and competitive gaming.",
   },
-
   {
-    title: "Learning",
-    description:
-      "Always exploring better ways to build, design and ship software.",
+    glyph: "📚",
+    title: "Reading sci-fi",
+    blurb:
+      "Currently working through classic speculative fiction — always looking for recommendations.",
+  },
+  {
+    glyph: "🎵",
+    title: "Music",
+    blurb: "Listening to various genres and discovering new artists.",
+  },
+  {
+    glyph: "🏃‍♂️",
+    title: "Fitness",
+    blurb: "Running, cycling, and maintaining a healthy lifestyle.",
   },
 ];
+
+export const tech = ["Next.js", "Node.js", "TypeScript", "WebSockets", "PostgreSQL", "Express", "Prisma", "Zustand"];
+
+export const modules = [
+  {
+    icon: "💬",
+    title: "Real-Time Chat System",
+    points: [
+      "One-to-one and group messaging with persistent history",
+      "Unread message tracking and typing indicators",
+      "Online presence via the centralized WebSocket manager",
+    ],
+  },
+  {
+    icon: "🎨",
+    title: "Collaborative Canvas",
+    points: [
+      "Modular HTML5 Canvas engine: selection, shapes, arrows, freehand drawing, text, and movement",
+      "Persistent canvas state across sessions",
+      "Server-side authorization with per-user shape ownership via REST API",
+    ],
+  },
+  {
+    icon: "🧠",
+    title: "Second Brain",
+    points: [
+      "Save and organize YouTube, X/Twitter, GitHub, and web links",
+      "Automatic URL detection and content classification",
+      "Optimistic UI for create, delete, filter, and search",
+    ],
+  },
+];
+
+export const facts = [
+  { label: "Role", value: "Backend-Focused Software Engineer" },
+  { label: "Focus", value: "Real-time systems & APIs" },
+  { label: "Available", value: "Open to select projects" },
+];
+
