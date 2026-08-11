@@ -22,9 +22,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Md Faiz — Backend-Focused Software Engineer",
+  title: "Md Faiz | Software Engineer — Full Stack & Backend",
   description:
-    "Portfolio of Md Faiz, a backend-focused software engineer building real-time systems, APIs, and collaborative applications.",
+    "Portfolio of Md Faiz, a software engineer focused on full-stack development, backend systems, real-time applications, APIs, and data structures & algorithms.",
 };
 
 export default function RootLayout({
