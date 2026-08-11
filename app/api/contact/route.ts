@@ -80,11 +80,8 @@ export async function POST(request: Request) {
       `,
 
     });
-    console.log("RESEND DATA:", data);
-      console.log("RESEND ERROR:", error);
 
     if (error) {
-      console.error("Resend error:", error);
 
       return Response.json(
         {
@@ -101,7 +98,6 @@ export async function POST(request: Request) {
       data,
     });
   } catch (error) {
-    console.error("Contact API error:", error);
 
     return Response.json(
       {

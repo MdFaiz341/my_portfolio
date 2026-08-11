@@ -1,12 +1,3 @@
-export const profile = {
-  name: "Md. Faiz",
-  role: "Frontend & Backend Software Engineer",
-  tagline:
-    "I build real-time, collaborative products — from WebSocket architecture to pixel-precise canvas tooling.",
-  email: "hello@mdfaiz.dev",
-  github: "https://github.com",
-  linkedin: "https://linkedin.com",
-};
 
 export const skills = {
   Languages: ["C++", "JavaScript", "TypeScript", "SQL"],
