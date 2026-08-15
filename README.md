@@ -1,7 +1,6 @@
 # 👨‍💻 MD Faiz – Personal Portfolio Website
 
-Welcome to my personal portfolio website!  
-This portfolio showcases my skills, projects, experience, and the technologies I work with as a Computer Science student and Full-Stack Developer.
+Welcome to my personal portfolio website! This site showcases my background, technical skills, featured projects, and development journey. Built with modern web technologies, it reflects my passion for creating clean, responsive, and interactive user experiences while demonstrating my skills as a full-stack developer.
 
 ## 🌐 Live Website
 
