@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import photo from "../assets/Formal-Pic-Coat.png";
+import photo from "../public/Formal-Pic-Coat.png";
 import { facts } from "@/lib/data";
 
 
